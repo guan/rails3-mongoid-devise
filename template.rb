@@ -87,7 +87,7 @@ config.generators do |g|
       g.orm             :mongoid
       g.template_engine :haml
     end
-    
+
     # Configure the default encoding used in templates for Ruby 1.9.
 RUBY
 end
@@ -109,6 +109,21 @@ gsub_file 'config/application.rb', /:password/, ':password, :password_confirmati
 puts "setting up Gemfile for Devise..."
 append_file 'Gemfile', "\n# Bundle gem needed for Devise\n"
 gem 'devise', '1.1.1'
+
+puts "setting up Gemfile for misc. "
+append_file 'Gemfile', "\n# Bundle gem needed for misc. \n"
+gem 'awesome_print'
+gem 'looksee'
+gem 'wirble'
+gem 'rspec-integration', '>= 2.0.0.beta.12', :group => :test
+gem 'factory_girl_rails', '>= 1.0.0', :group => :test
+gem 'ZenTest', :group => :test
+gem 'autotest-rails', :group => :test
+gem 'spork', :group => :test
+gem 'faker', :group => :test
+gem 'factory_girl_generator', '>= 0.0.1', :group => [:test, :development]
+gem 'rspec-rails', '>= 2.0.0.beta.12', :group => [:test, :development]
+
 
 puts "installing Devise gem (takes a few minutes!)..."
 run 'bundle install'
@@ -180,7 +195,7 @@ end
 if haml_flag
   run 'rm app/views/home/index.html.haml'
   # we have to use single-quote-style-heredoc to avoid interpolation
-  create_file 'app/views/home/index.html.haml' do 
+  create_file 'app/views/home/index.html.haml' do
 <<-'FILE'
 - @users.each do |user|
   %p User: #{link_to user.name, user}
@@ -242,11 +257,11 @@ else
   create_file "app/views/devise/menu/_login_items.html.erb" do <<-FILE
 <% if user_signed_in? %>
   <li>
-  <%= link_to('Logout', destroy_user_session_path) %>        
+  <%= link_to('Logout', destroy_user_session_path) %>
   </li>
 <% else %>
   <li>
-  <%= link_to('Login', new_user_session_path)  %>  
+  <%= link_to('Login', new_user_session_path)  %>
   </li>
 <% end %>
   FILE
@@ -313,13 +328,13 @@ end
 
 create_file 'public/stylesheets/application.css' do <<-FILE
 ul.hmenu {
-  list-style: none;	
+  list-style: none;
   margin: 0 0 2em;
   padding: 0;
 }
 
 ul.hmenu li {
-  display: inline;  
+  display: inline;
 }
 FILE
 end
