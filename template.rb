@@ -128,6 +128,10 @@ gem 'rspec-rails', '>= 2.0.0.beta.12', :group => [:test, :development]
 puts "installing Devise gem (takes a few minutes!)..."
 run 'bundle install'
 
+puts "configuring rspec"
+run 'rails generate rspec:install'
+gsub_file 'spec/spec_helper.rb', /config.fixture_path/, '# config.fixture_path'
+
 puts "creating 'config/initializers/devise.rb' Devise configuration file..."
 run 'rails generate devise:install'
 
