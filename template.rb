@@ -127,6 +127,8 @@ gem 'mongoid-rspec', :group => :test
 gem 'database_cleaner', :group => :test
 gem "mongrel", :group => :development
 gem "hpricot"
+gem "ruby_parser"
+
 
 puts "installing Devise gem (takes a few minutes!)..."
 run 'bundle install'
