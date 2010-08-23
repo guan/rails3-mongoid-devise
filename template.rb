@@ -126,6 +126,7 @@ gem 'rspec-rails', '>= 2.0.0.beta.12', :group => [:test, :development]
 gem 'mongoid-rspec', :group => :test
 gem 'database_cleaner', :group => :test
 gem "mongrel", :group => :development
+gem "hpricot"
 
 puts "installing Devise gem (takes a few minutes!)..."
 run 'bundle install'
