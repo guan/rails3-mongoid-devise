@@ -128,7 +128,9 @@ gem 'database_cleaner', :group => :test
 gem "mongrel", :group => :development
 gem "hpricot"
 gem "ruby_parser"
-
+gem 'steak', :git => 'git://github.com/cavalle/steak.git'
+gem 'capybara'
+gem 'delorean''
 
 puts "installing Devise gem (takes a few minutes!)..."
 run 'bundle install'
