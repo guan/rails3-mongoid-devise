@@ -137,6 +137,7 @@ run 'bundle install'
 
 puts "configuring rspec"
 run 'rails generate rspec:install'
+run 'rails generate steak:install'
 gsub_file 'spec/spec_helper.rb', /config.fixture_path/, '# config.fixture_path'
 gsub_file 'spec/spec_helper.rb', /config.use_transactional_fixtures/, '# config.use_transactional_fixtures'
 
