@@ -123,7 +123,7 @@ gem 'spork', :group => :test
 gem 'faker', :group => :test
 gem 'factory_girl_generator', '>= 0.0.1', :group => [:test, :development]
 gem 'rspec-rails', '>= 2.0.0.beta.12', :group => [:test, :development]
-gem 'mongoid-rspec', :group => :test
+gem "remarkable_mongoid",  :group => [:test, :development]
 gem 'database_cleaner', :group => :test
 gem "mongrel", :group => :development
 gem "hpricot"
