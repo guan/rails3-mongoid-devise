@@ -56,7 +56,7 @@ h2. Generating the Application
 
 To get started with a new Rails application based on this example, you can generate a new Rails app:
 
-@$ rails new app_name -m http://github.com/fortuity/rails3-mongoid-devise/raw/master/template.rb@
+@$ rails new app_name -m http://github.com/guan/rails3-mongoid-devise/raw/master/template.rb@
 
 This creates a new Rails app (with the @app_name@ you provide) on your computer. It includes everything in the example app (as described in the "tutorial":http://wiki.github.com/fortuity/rails3-mongoid-devise/tutorial-walkthrough). Plus it offers you the option of setting up your view files using the Haml templating language.
 
